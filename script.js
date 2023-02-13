@@ -8,11 +8,12 @@ window.addEventListener('keydown', function(e) {
 });
 
 function removeTransition(e) {
-  if (e.propartyName !== 'transform') return;
-  
+  if (e.propertyName != 'transform') return;
   this .classList.remove('playing');
 }
 
 
 const keys = document.querySelectorAll('.key');
-keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+keys.forEach(key => {
+  return key.addEventListener('transitionend', removeTransition)
+});
