@@ -86,3 +86,9 @@ const people = [
   'Birrell, Augustine', 'Black, Elk', 'Blair, Robert', 'Blair, Tony',
   'Blake, William'
 ];
+
+const fifteen = inventors.filter(function(inventor) {
+  if(inventor.year >= 1500 && inventor.year < 1600){
+    return true;
+  }
+});
