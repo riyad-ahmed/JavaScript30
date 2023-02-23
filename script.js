@@ -92,3 +92,6 @@ const fifteen = inventors.filter(function(inventor) {
     return true;
   }
 });
+
+const ordered = inventors.sort((a,b) => a.year > b.year ? 1 : -1);
+console.table(ordered);
