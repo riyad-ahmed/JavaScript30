@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veu Js</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="crud_style.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <h2>{{ title }}</h2>
+        <textarea for="note" autofocus placeholder="insert your note .." id="note"></textarea>
+        <button class="button" onclick="addNote()">Click me</button>
+    </div>
+
+    <table class="table" id="crud">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">note</th>
+                <th scope="col">Time</th>
+                <th scope="col"> Action </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script src="vMain.js"></script>
+    <script src="crud.js"></script>
+    <script>
+        const mountedapp = app.mount('#app')
+    </script>
+
+</body>
+
+</html>
