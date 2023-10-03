@@ -44,5 +44,5 @@ console.table(fifteen);
 
 console.log(riyad);
 
-// const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
-// console.table(ordered);
+const ordered = inventors.sort((a, b) => a.year > b.year ? 1 : -1);
+console.table(ordered);
