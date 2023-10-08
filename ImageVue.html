@@ -50,6 +50,7 @@
       justify-content: center;
       display: flex;
       flex-direction: column;
+
     }
 
     .panel1 {
@@ -147,20 +148,25 @@
 
 
   <script>
+
     const panels = document.querySelectorAll('.panel');
 
-    function toggleOpen() {
-      this.classList.toggle('open');
-    }
+    panels.forEach(panel => {
+      panel.addEventListener('click', (e) => {
+        panel.classList.toggle('open')
 
-    function toggleActive(e) {
-      if (e.propertyName.includes('flex')) {
-        this.classList.toggle('open-active');
-      }
-    }
+        panel.classList.toggle('open-active')
 
-    panels.forEach(panel => panel.addEventListener('click', toggleOpen))
-    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive))
+        panels.forEach(sibling => {
+          if (sibling !== panel) {
+            sibling.classList.remove('open')
+            sibling.classList.remove('open-active')
+          }
+        })
+
+      })
+    })
+
   </script>
 </body>
 
