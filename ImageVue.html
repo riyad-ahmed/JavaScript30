@@ -31,6 +31,7 @@
       min-height: 100vh;
       overflow: hidden;
       display: flex;
+      width: 100%;
     }
 
     .panel {
@@ -110,7 +111,7 @@
 
     .panel.open {
       font-size: 40px;
-      /* flex: 5; */
+      flex: 5;
     }
   </style>
 
@@ -143,6 +144,24 @@
       <p>Dance</p>
     </div>
   </div>
+
+
+  <script>
+    const panels = document.querySelectorAll('.panel');
+
+    function toggleOpen() {
+      this.classList.toggle('open');
+    }
+
+    function toggleActive(e) {
+      if (e.propertyName.includes('flex')) {
+        this.classList.toggle('open-active');
+      }
+    }
+
+    panels.forEach(panel => panel.addEventListener('click', toggleOpen))
+    panels.forEach(panel => panel.addEventListener('transitionend', toggleActive))
+  </script>
 </body>
 
 </html>
